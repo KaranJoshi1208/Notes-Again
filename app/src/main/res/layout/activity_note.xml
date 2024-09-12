@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FCF2EB"
+        tools:context=".ui.NoteActivity">
+
+        <TextView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="serif"
+            android:gravity="center_horizontal"
+            android:text="Title Ke Liye \nTitle"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="12dp"
+            android:fontFamily="casual"
+            android:paddingBottom="8dp"
+            android:text="Sunday, 1 Sep 2024, 10:03 pm"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/title_view"
+            app:layout_constraintStart_toStartOf="@+id/title_view"
+            app:layout_constraintTop_toBottomOf="@+id/title_view" />
+
+        <TextView
+            android:id="@+id/label_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/date_view"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/search_bg"
+            android:lineSpacingMultiplier="1.2"
+            android:padding="16dp"
+            android:text="Dummy text"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

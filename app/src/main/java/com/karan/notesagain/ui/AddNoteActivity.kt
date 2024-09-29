@@ -57,7 +57,8 @@ class AddNoteActivity : AppCompatActivity() {
         )[AddNoteViewModel::class.java]
 
 
-        var oldNote: Note? = null                                                                    //  We can store this in the ViewModel but this will also work properly
+        var oldNote: Note? =
+            null                                                                    //  We can store this in the ViewModel but this will also work properly
         try {
             oldNote = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 intent.getSerializableExtra("old_note", Note::class.java)
@@ -65,7 +66,8 @@ class AddNoteActivity : AppCompatActivity() {
                 intent.getSerializableExtra("old_note") as Note?
             }
 
-        } catch (_: Exception) {}
+        } catch (_: Exception) {
+        }
 
         if (oldNote != null) {
             viewModel.isUpdating = true
@@ -173,8 +175,10 @@ class AddNoteActivity : AppCompatActivity() {
         }.create()
 
         alert.setOnShowListener {
-            alert.getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(ContextCompat.getColor(this, R.color.black))
-            alert.getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(ContextCompat.getColor(this, R.color.black))
+            alert.getButton(AlertDialog.BUTTON_POSITIVE)
+                ?.setTextColor(ContextCompat.getColor(this, R.color.black))
+            alert.getButton(AlertDialog.BUTTON_NEGATIVE)
+                ?.setTextColor(ContextCompat.getColor(this, R.color.black))
         }
 
         alert.show()

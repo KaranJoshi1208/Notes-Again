@@ -7,10 +7,8 @@ import android.util.Log
 import android.widget.EditText
 import java.util.LinkedList
 
-class TextEditHelper(editText: EditText) {
-
-    private val editView = editText
-
+class TextEditHelper(private val editView: EditText) {
+    
     /**
      * To observe weather an undo/redo task is already taking place.
      */
@@ -34,10 +32,10 @@ class TextEditHelper(editText: EditText) {
             afterText = s?.subSequence(start, start + count).toString()
             val temp = Edit(start, beforeText, afterText)
             editor.addEdit(temp)
-            Log.d(
-                "textChanged",
-                "start position : ${temp.start}, Before : ${temp.beforeText} , After : ${temp.afterText}"
-            )
+//            Log.d(
+//                "textChanged",
+//                "start position : ${temp.start}, Before : ${temp.beforeText} , After : ${temp.afterText}"
+//            )
         }
 
         override fun afterTextChanged(s: Editable?) {
@@ -79,6 +77,10 @@ class TextEditHelper(editText: EditText) {
             text,
             if (item.afterText.isEmpty()) 0 else start + item.afterText.length
         )
+    }
+
+    fun clearHistory() {
+        editor.clear()
     }
 
 

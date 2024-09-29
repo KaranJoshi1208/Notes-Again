@@ -2,6 +2,7 @@ package com.karan.notesagain.ui
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
@@ -43,6 +45,7 @@ class AddNoteActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             onBackPressedDispatcher.addCallback {
                 wannaExit {
+                    viewModel.helper?.clearHistory()
                     finish()
                 }
             }
@@ -54,8 +57,7 @@ class AddNoteActivity : AppCompatActivity() {
         )[AddNoteViewModel::class.java]
 
 
-        var oldNote: Note? =
-            null                                                                    //  We can store this in the ViewModel but this will also work properly
+        var oldNote: Note? = null                                                                    //  We can store this in the ViewModel but this will also work properly
         try {
             oldNote = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 intent.getSerializableExtra("old_note", Note::class.java)
@@ -63,8 +65,7 @@ class AddNoteActivity : AppCompatActivity() {
                 intent.getSerializableExtra("old_note") as Note?
             }
 
-        } catch (_: Exception) {
-        }
+        } catch (_: Exception) {}
 
         if (oldNote != null) {
             viewModel.isUpdating = true
@@ -98,6 +99,7 @@ class AddNoteActivity : AppCompatActivity() {
         binder.backBtn.setOnClickListener {
             // Alert Dialog to confirm leaving
             wannaExit {
+                viewModel.helper?.clearHistory()
                 finish()
             }
         }
@@ -168,8 +170,13 @@ class AddNoteActivity : AppCompatActivity() {
             setNegativeButton("No") { dialog, _ ->
                 dialog.dismiss()
             }
-            create()
+        }.create()
+
+        alert.setOnShowListener {
+            alert.getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(ContextCompat.getColor(this, R.color.black))
+            alert.getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(ContextCompat.getColor(this, R.color.black))
         }
+
         alert.show()
     }
 
@@ -186,6 +193,7 @@ class AddNoteActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             onBackInvokedDispatcher.unregisterOnBackInvokedCallback {
                 wannaExit {
+                    viewModel.helper?.clearHistory()
                     finish()
                 }
             }

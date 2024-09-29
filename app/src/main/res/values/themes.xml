@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.NotesAgain" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">#F08080</item>
-        <item name="colorAccent">#FCF2EB</item>
+         <item name="colorPrimary">#FCF2EB</item>
+        <item name="colorAccent">#673AB7</item>
     </style>
 
     <style name="Theme.NotesAgain" parent="Base.Theme.NotesAgain" />

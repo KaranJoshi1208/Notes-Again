@@ -44,9 +44,9 @@ A powerful yet simple Android notes app designed to help users capture, organize
 Here are some screenshots showcasing the key features of Quotify. 
 
 <div align="start">
-  <img src="Images/" alt="Notes Logo" height="400" style="display: inline-block; margin-right: 10px; border: 2px solid #ddd; border-radius: 5px;"/>
-  <img src="Images/" alt="Notes Logo" height="400" style="display: inline-block; margin-right: 10px; border: 2px solid #ddd; border-radius: 5px;"/>
-  <img src="Images/" alt="Notes Logo" height="400" style="display: inline-block; border: 2px solid #ddd; border-radius: 5px;"/>
+  <img src="sauce/1727682753517.jpg" alt="Notes Logo" height="400" style="display: inline-block; margin-right: 10px; border: 2px solid #ddd; border-radius: 5px;"/>
+  <img src="sauce/1727682753510.jpg" alt="Notes Logo" height="400" style="display: inline-block; margin-right: 10px; border: 2px solid #ddd; border-radius: 5px;"/>
+  <img src="sauce/1727682753503.jpg" alt="Notes Logo" height="400" style="display: inline-block; border: 2px solid #ddd; border-radius: 5px;"/>
 </div>
 
 ### Demonstration Video

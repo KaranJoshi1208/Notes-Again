@@ -1,7 +1,7 @@
 # Notes  
 
 <div align="center">
-  <img src="Images/" alt="Notes Logo" width="1920" />
+  <img src="sauce/Notes_banner.png" alt="Notes Logo" width="1920" />
 </div>
 
 ------

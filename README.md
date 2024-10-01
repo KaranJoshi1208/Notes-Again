@@ -51,7 +51,7 @@ Here are some screenshots showcasing the key features of Quotify.
 
 ### Demonstration Video
 
-[![Watch the video](https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg)]()
+[![Watch the video](https://img.youtube.com/vi/J4UUINM0KAI/hqdefault.jpg)](https://youtu.be/J4UUINM0KAI)
 
 
 ---
